@@ -8,15 +8,9 @@ import particle as P
 pygame.init()
 screen = pygame.display.set_mode((w_width, w_height))
 done = False
-
-
-p = P.Particle()
-pl = P.PlayerParticle()
-
-particles = [p,pl]
 clock = pygame.time.Clock()
         
-print(p)
+population = P.Population(screen)
 
 while not done:
         clock.tick(60) # Cap the frame rate
@@ -25,9 +19,8 @@ while not done:
                 if event.type == pygame.QUIT:
                         done = True
 
-        for p in particles:
-            p.update()
-            p.draw(screen)
+        # Run the particles
+        population.run()
 
         pygame.display.flip()
 
