@@ -40,7 +40,7 @@ class PlayerParticle(Particle):
 
 class Population():
     def __init__(self, screen):
-        self.types = 7
+        self.types = 5
         self.size = 20
         self.screen = screen
         self.particles = [PlayerParticle()]
